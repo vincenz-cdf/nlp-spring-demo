@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div class="container">
+    <textarea [(ngModel)]="text" (input)="onTextChange(text)" id="text-input"></textarea>
+    <div id="word-count">{{ wordCount }} words</div>
+    <div *ngIf="loading">
+      <div class="loader"></div>
+    </div>
+    <div *ngIf="!loading && complexityLevel != 'NaN' && sentiment">
+      <p>{{ complexity }} and is mostly <strong [style.color]="sentimentColor">{{ sentiment }}</strong></p>
+    </div>
+  </div>
+</body>
+
+</html>
